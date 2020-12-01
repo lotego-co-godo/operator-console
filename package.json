@@ -12,6 +12,8 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
+    "dev-win-x64": "concurrently \"npm run start-server-win-x64\" \"npm run start\"",
+    "dev-linux": "concurrently \"npm run start-server-linux\" \"npm run start\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -20,7 +22,9 @@
     "prettify": "prettier . --write",
     "prettier:check": "prettier . --check",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "lint:fix": "npm lint --fix"
+    "lint:fix": "npm run lint --fix",
+    "start-server-win-x64": "start ./server/RadioDataServer_win-x64.exe",
+    "start-server-linux": "./server/RadioDataServer_linux-x64"
   },
   "eslintConfig": {
     "extends": [

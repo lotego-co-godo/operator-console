@@ -20,7 +20,7 @@
     "prettify": "prettier . --write",
     "prettier:check": "prettier . --check",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "lint:fix": "yarn lint --fix"
+    "lint:fix": "npm lint --fix"
   },
   "eslintConfig": {
     "extends": [

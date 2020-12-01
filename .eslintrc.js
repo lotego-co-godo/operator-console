@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2020: true,
     node: true,
-    jest: true
+    jest: true,
   },
   extends: ['eslint:recommended', 'plugin:react/recommended', 'prettier', 'prettier/react'],
   parserOptions: {

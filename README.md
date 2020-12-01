@@ -1,4 +1,4 @@
-# Konsole operatorska
+# Konsola operatorska
 
 ###### Zadanie II Etapu Motorola Science Cup
 

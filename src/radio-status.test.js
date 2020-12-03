@@ -1,9 +1,9 @@
 import axios from 'axios';
-import { fetchRadioStatus } from './radio-status';
+import { fetchRadioStatuses } from './radio-status';
 
 jest.mock('axios');
 
-describe('fetchRadioStatus()', () => {
+describe('fetchRadioStatuses()', () => {
   it('should return correct radio status', async () => {
     axios.get.mockReturnValue(
       Promise.resolve({
@@ -22,7 +22,7 @@ describe('fetchRadioStatus()', () => {
       })
     );
 
-    const radioStatus = (await fetchRadioStatus())[0];
+    const radioStatus = (await fetchRadioStatuses())[0];
     expect(radioStatus).toStrictEqual({
       Id: 1,
       Name: 'KR 1',

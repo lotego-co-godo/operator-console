@@ -3,7 +3,7 @@ export type Position = {
   Lon: string;
 };
 
-export type Radio = {
+export type RadioStatus = {
   Id: number;
   Name: string;
   Type: 'Portable' | 'Car' | 'BaseStation';

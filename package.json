@@ -2,17 +2,6 @@
   "name": "operator-console",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.6",
-    "@testing-library/react": "^11.2.2",
-    "@testing-library/user-event": "^12.3.0",
-    "axios": "^0.21.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.1",
-    "rxjs": "^6.6.3",
-    "web-vitals": "^0.2.4"
-  },
   "scripts": {
     "dev-win-x64": "concurrently \"npm run start-server-win-x64\" \"npm run start\"",
     "dev-linux": "concurrently \"npm run start-server-linux\" \"npm run start\"",
@@ -45,6 +34,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.3.0",
+    "axios": "^0.21.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "rxjs": "^6.6.3",
+    "web-vitals": "^0.2.4"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",

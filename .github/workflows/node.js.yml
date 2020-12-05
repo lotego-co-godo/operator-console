@@ -28,7 +28,7 @@ jobs:
         run: npm install
 
       - name: Run prettier
-        run: npx run prettify
+        run: npm run prettify
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4

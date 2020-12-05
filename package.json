@@ -12,7 +12,7 @@
     "postinstall": "husky install",
     "prettify": "prettier . --write",
     "prettier:check": "prettier . --check",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint . --ext .js,.jsx",
     "lint:fix": "npm run lint --fix",
     "start-server-win-x64": "start ./server/RadioDataServer_win-x64.exe",
     "start-server-linux": "./server/RadioDataServer_linux-x64"

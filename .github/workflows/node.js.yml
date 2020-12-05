@@ -5,8 +5,8 @@ on:
     branches: [master]
 
 jobs:
-  ci:
-    name: Continuous integration
+  prettify:
+    name: Prettify code
     runs-on: ubuntu-latest
 
     steps:
@@ -27,11 +27,45 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Run prettier
+        run: npm run prettify
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Prettify code
+          commit_options: '--no-verify'
+          commit_user_name: Prettier Bot
+          commit_author: Prettier Bot <actions@github.com>
+
+  ci:
+    name: Continuous integration
+    runs-on: ubuntu-latest
+    needs: prettify
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install dependencies
+        run: npm install
+
       - name: Check style
-        run: npx prettier . --check
+        run: npm run prettier:check
 
       - name: Lint
-        run: npx eslint . --ext .js,.jsx
+        run: npm run lint
 
       - name: Test
         run: npm run test

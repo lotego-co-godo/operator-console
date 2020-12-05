@@ -36,6 +36,7 @@ jobs:
           commit_message: Prettify code
           commit_options: '--no-verify'
           commit_user_name: Prettier Bot
+          commit_author: Prettier Bot <actions@github.com>
 
   ci:
     name: Continuous integration

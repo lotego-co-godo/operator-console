@@ -4,7 +4,7 @@ import { fetchRadioStatus } from './radio-status';
 jest.mock('axios');
 
 describe('fetchRadioStatus()', () => {
-  it('should return correct radio status', async () => {
+  it('should return correct radio statuses', async () => {
     axios.get.mockReturnValue(
       Promise.resolve({
         data: [

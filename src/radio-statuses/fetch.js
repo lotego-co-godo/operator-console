@@ -5,7 +5,7 @@ const radioEndpoint = '/radios';
 /**
  * @returns {Promise<RadioStatus[]>}
  */
-export async function fetchRadioStatus() {
+export async function fetchRadioStatuses() {
   const response = await axios.get(radioEndpoint);
 
   return response.data;

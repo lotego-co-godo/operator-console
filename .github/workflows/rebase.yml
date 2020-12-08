@@ -1,4 +1,4 @@
-name: Automatic Rebase
+name: Automatic rebase
 
 on:
   issue_comment:
@@ -7,8 +7,9 @@ on:
 jobs:
   rebase:
     name: Rebase
-    if: github.event.issue.pull_request != '' && contains(github.event.comment.body, '/rebase')
+    if: ${{ github.event.issue.pull_request && contains(github.event.comment.body, '/rebase') }}
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout the latest code
         uses: actions/checkout@v2

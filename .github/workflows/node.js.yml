@@ -3,6 +3,9 @@ name: Node.js
 on:
   pull_request:
     branches: [master]
+  workflow_run:
+    workflows: ['Automatic Rebase']
+    types: [completed]
 
 jobs:
   prettify:

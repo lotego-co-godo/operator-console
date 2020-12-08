@@ -30,12 +30,14 @@ describe('radioStatusesObservable', () => {
       ])
     );
 
-    radioStatusesObservable.subscribe(() => '');
+    const subscription = radioStatusesObservable.subscribe(() => '');
 
     const veryShortTime = 1;
     await sleep(veryShortTime);
 
     expect(fetchRadioStatuses).toBeCalled();
+
+    subscription.unsubscribe();
   });
 
   it('should call fetchRadioStatuses() each {refreshRateInSeconds} seconds when subscribed', async () => {
@@ -54,7 +56,7 @@ describe('radioStatusesObservable', () => {
       ])
     );
 
-    radioStatusesObservable.subscribe(() => '');
+    const subscription = radioStatusesObservable.subscribe(() => '');
 
     for (let i = 0; i < 3; i++) {
       const someExtraTime = 10;
@@ -63,6 +65,8 @@ describe('radioStatusesObservable', () => {
       const initialCall = 1;
       expect(fetchRadioStatuses).toBeCalledTimes(i + 1 + initialCall);
     }
+
+    subscription.unsubscribe();
   });
 
   it('should push statuses instantly after subscribing when there are no network delays', async () => {
@@ -82,7 +86,7 @@ describe('radioStatusesObservable', () => {
     );
 
     let radioStatuses;
-    radioStatusesObservable.subscribe((statuses) => (radioStatuses = statuses));
+    const subscription = radioStatusesObservable.subscribe((statuses) => (radioStatuses = statuses));
 
     const veryShortTime = 1;
     await sleep(veryShortTime);
@@ -101,6 +105,8 @@ describe('radioStatusesObservable', () => {
         Position: { Lat: '50.062', Lon: '19.906' },
       },
     ]);
+
+    subscription.unsubscribe();
   });
 
   it('should push new statuses each {refreshRateInSeconds} seconds when subscribed and there are no network delays', async () => {
@@ -120,7 +126,7 @@ describe('radioStatusesObservable', () => {
     );
 
     let mostRecentStatuses;
-    radioStatusesObservable.subscribe((statuses) => (mostRecentStatuses = statuses));
+    const subscription = radioStatusesObservable.subscribe((statuses) => (mostRecentStatuses = statuses));
 
     for (let i = 0; i < 3; i++) {
       fetchRadioStatuses.mockReturnValue(
@@ -145,6 +151,8 @@ describe('radioStatusesObservable', () => {
       // noinspection JSUnusedAssignment
       expect(mostRecentStatuses[0].Strength).toBe(i);
     }
+
+    subscription.unsubscribe();
   });
 
   it('should not call fetchRadioStatuses() anymore when unsubscribed', async () => {

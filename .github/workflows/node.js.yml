@@ -41,6 +41,7 @@ jobs:
   ci:
     name: Continuous integration
     runs-on: ubuntu-latest
+    needs: prettify
 
     steps:
       - name: Checkout

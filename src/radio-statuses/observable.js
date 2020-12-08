@@ -4,11 +4,11 @@ import { Observable } from 'rxjs';
 import { fetchRadioStatuses } from './fetch';
 import { refreshRateInSeconds } from './refresh-rate';
 
+const interval = refreshRateInSeconds * 1000;
+
 /**
  * @type {Observable<RadioStatus[]>}
  */
-
-const interval = refreshRateInSeconds * 1000;
 export const radioStatusesObservable = new Observable((subscriber) => {
   const timerSubscription = timer(0, interval).subscribe(() => {
     const radioStatusesPromise = fetchRadioStatuses();

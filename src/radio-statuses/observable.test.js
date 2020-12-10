@@ -91,7 +91,7 @@ describe('radioStatusesObservable', () => {
     const veryShortTime = 1;
     await sleep(veryShortTime);
 
-    // the test will fail if undefined
+    // the test should fail if undefined
     // noinspection JSUnusedAssignment
     expect(radioStatuses).toStrictEqual([
       {
@@ -147,7 +147,7 @@ describe('radioStatusesObservable', () => {
       const someExtraTime = 10;
       await sleep(refreshRateInMilliseconds + someExtraTime);
 
-      // the test will fail if undefined
+      // the test should fail if undefined
       // noinspection JSUnusedAssignment
       expect(mostRecentStatuses[0].Strength).toBe(i);
     }

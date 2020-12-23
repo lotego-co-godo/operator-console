@@ -1,6 +1,6 @@
 import { fetchRadioStatuses } from './fetch';
 import { radioStatusesObservable } from './observable';
-import { sleep } from '../sleep';
+import { sleep, nextTick } from '../sleep';
 
 jest.mock('./fetch', () => ({
   fetchRadioStatuses: jest.fn(),
@@ -32,8 +32,7 @@ describe('radioStatusesObservable', () => {
 
     const subscription = radioStatusesObservable.subscribe(() => '');
 
-    const veryShortTime = 1;
-    await sleep(veryShortTime);
+    await nextTick();
 
     expect(fetchRadioStatuses).toBeCalled();
 
@@ -59,7 +58,7 @@ describe('radioStatusesObservable', () => {
     const subscription = radioStatusesObservable.subscribe(() => '');
 
     for (let i = 0; i < 3; i++) {
-      const someExtraTime = 10;
+      const someExtraTime = 20;
       await sleep(refreshRateInMilliseconds + someExtraTime);
 
       const initialCall = 1;
@@ -85,26 +84,24 @@ describe('radioStatusesObservable', () => {
       ])
     );
 
-    let radioStatuses;
-    const subscription = radioStatusesObservable.subscribe((statuses) => (radioStatuses = statuses));
+    expect.assertions(1);
 
-    const veryShortTime = 1;
-    await sleep(veryShortTime);
+    const subscription = radioStatusesObservable.subscribe((statuses) =>
+      expect(statuses).toStrictEqual([
+        {
+          Id: 1,
+          Name: 'KR 1',
+          Type: 'BaseStation',
+          SerialNumber: '6080-0414-7591-00001',
+          Strength: 10,
+          BatteryLevel: 100,
+          WorkingMode: 'Voice',
+          Position: { Lat: '50.062', Lon: '19.906' },
+        },
+      ])
+    );
 
-    // the test should fail if undefined
-    // noinspection JSUnusedAssignment
-    expect(radioStatuses).toStrictEqual([
-      {
-        Id: 1,
-        Name: 'KR 1',
-        Type: 'BaseStation',
-        SerialNumber: '6080-0414-7591-00001',
-        Strength: 10,
-        BatteryLevel: 100,
-        WorkingMode: 'Voice',
-        Position: { Lat: '50.062', Lon: '19.906' },
-      },
-    ]);
+    await nextTick();
 
     subscription.unsubscribe();
   });
@@ -144,7 +141,7 @@ describe('radioStatusesObservable', () => {
         ])
       );
 
-      const someExtraTime = 10;
+      const someExtraTime = 20;
       await sleep(refreshRateInMilliseconds + someExtraTime);
 
       // the test should fail if undefined
@@ -173,14 +170,25 @@ describe('radioStatusesObservable', () => {
 
     const subscription = radioStatusesObservable.subscribe(() => '');
 
-    const veryShortTime = 1;
-    await sleep(veryShortTime);
+    await nextTick();
 
     await subscription.unsubscribe();
 
-    const someExtraTime = 10;
+    const someExtraTime = 20;
     await sleep(refreshRateInMilliseconds + someExtraTime);
 
     expect(fetchRadioStatuses).toBeCalledTimes(1);
+  });
+
+  it('should ignore Promise rejections', async () => {
+    fetchRadioStatuses.mockImplementation(async () => {
+      await nextTick();
+      throw Error('Request failed');
+    });
+
+    radioStatusesObservable.subscribe(() => '');
+
+    const someExtraTime = 20;
+    await sleep(someExtraTime);
   });
 });

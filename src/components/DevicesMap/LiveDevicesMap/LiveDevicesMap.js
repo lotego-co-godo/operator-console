@@ -16,5 +16,5 @@ export function LiveDevicesMap(props) {
 }
 
 LiveDevicesMap.propTypes = {
-  radioStatusesObservable: PropTypes.instanceOf(Observable),
+  radioStatusesObservable: PropTypes.instanceOf(Observable).isRequired,
 };

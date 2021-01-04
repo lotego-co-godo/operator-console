@@ -27,5 +27,5 @@ export function DevicesMap(props) {
 }
 
 DevicesMap.propTypes = {
-  radioStatuses: PropTypes.arrayOf(radioStatusType),
+  radioStatuses: PropTypes.arrayOf(radioStatusType).isRequired,
 };

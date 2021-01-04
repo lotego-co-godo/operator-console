@@ -5,42 +5,8 @@ on:
     branches: [master]
 
 jobs:
-  prettify:
-    name: Prettify code
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Setup Node
-        uses: actions/setup-node@v2.1.4
-        with:
-          node-version: '14'
-
-      - name: Cache node_modules
-        uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-node_modules-${{ hashFiles('**/package-lock.json') }}
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run prettier
-        run: npm run prettify
-
-      - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: Prettify code
-          commit_options: '--no-verify'
-          commit_user_name: Prettier Bot
-          commit_author: Prettier Bot <actions@github.com>
-
   ci:
     name: Check code integrity
-    needs: prettify
     runs-on: ubuntu-latest
 
     steps:

@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 
-export const positionType = PropTypes.shape({
+export const Position = PropTypes.shape({
   Lat: PropTypes.string,
   Lon: PropTypes.string,
 });
 
-export const radioStatusType = PropTypes.shape({
+export const RadioStatus = PropTypes.shape({
   Id: PropTypes.number,
   Name: PropTypes.string,
   Type: PropTypes.oneOf(['Portable', 'Car', 'BaseStation']),
@@ -13,5 +13,5 @@ export const radioStatusType = PropTypes.shape({
   Strength: PropTypes.number,
   BatteryLevel: PropTypes.number,
   WorkingMode: PropTypes.oneOf(['Voice', 'Data', 'Idle']),
-  Position: positionType,
+  Position: Position,
 });

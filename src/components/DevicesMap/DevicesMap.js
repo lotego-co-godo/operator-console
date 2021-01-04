@@ -1,7 +1,7 @@
 import React from 'react';
 import './DevicesMap.css';
 import PropTypes from 'prop-types';
-import { radioStatusType } from '../../radio-statuses/types';
+import { RadioStatus } from '../../radio-statuses/types';
 
 export function DevicesMap(props) {
   const { radioStatuses } = props;
@@ -27,5 +27,5 @@ export function DevicesMap(props) {
 }
 
 DevicesMap.propTypes = {
-  radioStatuses: PropTypes.arrayOf(radioStatusType).isRequired,
+  radioStatuses: PropTypes.arrayOf(RadioStatus).isRequired,
 };

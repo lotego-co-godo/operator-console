@@ -4,7 +4,7 @@ import { timer } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 export default {
-  title: 'Devices Map/Live',
+  title: 'Devices Map/LiveDevicesMap',
   component: LiveDevicesMap,
 };
 

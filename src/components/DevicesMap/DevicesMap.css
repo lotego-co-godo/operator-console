@@ -1,0 +1,4 @@
+.DevicesMap > .leaflet-container {
+  width: 800px;
+  height: 500px;
+}

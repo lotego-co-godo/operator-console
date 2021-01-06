@@ -2,7 +2,7 @@ import React from 'react';
 import { DevicesMap } from './DevicesMap';
 
 export default {
-  title: 'Devices Map',
+  title: 'DevicesMap',
   component: DevicesMap,
 };
 

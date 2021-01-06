@@ -11,16 +11,20 @@ export function DevicesMap(props) {
 
   return (
     <div className='DevicesMap'>
-      <MapContainer center={firstDevicePosition} zoom={13} scrollWheelZoom={false}>
+      <MapContainer center={firstDevicePosition} zoom={2} scrollWheelZoom={false}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
         />
-        <Marker position={firstDevicePosition}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable. <br /> {firstDevice.BatteryLevel}
-          </Popup>
-        </Marker>
+        {radioStatuses.map((device, i) => (
+          <Marker position={[device.Position.Lat, device.Position.Lon]} key={i}>
+            <Popup>
+              Id: {device.Id} <br />
+              Strength: {device.Strength} <br />
+              BatteryLevel: {device.BatteryLevel}
+            </Popup>
+          </Marker>
+        ))}
       </MapContainer>
     </div>
   );

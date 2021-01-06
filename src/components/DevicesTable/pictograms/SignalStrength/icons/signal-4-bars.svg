@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Warstwa_1" focusable="false"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 640 512"
+	 style="enable-background:new 0 0 640 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{opacity:0.5;}
+</style>
+<path d="M216,288h-48c-8.8,0-16,7.2-16,16v192c0,8.8,7.2,16,16,16h48c8.8,0,16-7.2,16-16V304C232,295.2,224.8,288,216,288z M88,384
+	H40c-8.8,0-16,7.2-16,16v96c0,8.8,7.2,16,16,16h48c8.8,0,16-7.2,16-16v-96C104,391.2,96.8,384,88,384z M344,192h-48
+	c-8.8,0-16,7.2-16,16v288c0,8.8,7.2,16,16,16h48c8.8,0,16-7.2,16-16V208C360,199.2,352.8,192,344,192z M472,96h-48
+	c-8.8,0-16,7.2-16,16v384c0,8.8,7.2,16,16,16h48c8.8,0,16-7.2,16-16V112C488,103.2,480.8,96,472,96z"/>
+<path class="st0" d="M600,0h-48c-8.8,0-16,7.2-16,16v480c0,8.8,7.2,16,16,16h48c8.8,0,16-7.2,16-16V16C616,7.2,608.8,0,600,0z"/>
+</svg>

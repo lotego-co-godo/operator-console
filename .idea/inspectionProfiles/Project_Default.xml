@@ -1,9 +1,118 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
+    <inspection_tool class="CheckEmptyScriptTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Svg" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="CheckImageSize" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Svg" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="CheckValidXmlInScriptTagBody" enabled="true" level="ERROR" enabled_by_default="true">
+      <scope name="Svg" level="ERROR" enabled="false" />
+    </inspection_tool>
     <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="HtmlDeprecatedAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Svg" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="HtmlDeprecatedTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Svg" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="HtmlExtraClosingTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Svg" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="HtmlFormInputWithoutLabel" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Svg" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="HtmlMissingClosingTag" enabled="true" level="INFORMATION" enabled_by_default="true">
+      <scope name="Svg" level="INFORMATION" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="HtmlNonExistentInternetResource" enabled="false" level="WARNING" enabled_by_default="false">
+      <scope name="Svg" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="HtmlPresentationalElement" enabled="false" level="INFORMATION" enabled_by_default="false">
+      <scope name="Svg" level="INFORMATION" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="HtmlRequiredAltAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Svg" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="HtmlRequiredLangAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Svg" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="HtmlRequiredSummaryAttribute" enabled="false" level="INFORMATION" enabled_by_default="false">
+      <scope name="Svg" level="INFORMATION" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="HtmlRequiredTitleAttribute" enabled="false" level="INFORMATION" enabled_by_default="false">
+      <scope name="Svg" level="INFORMATION" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="HtmlRequiredTitleElement" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Svg" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownAnchorTarget" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Svg" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Svg" level="WARNING" enabled="false">
+        <option name="myValues">
+          <value>
+            <list size="0" />
+          </value>
+        </option>
+        <option name="myCustomValuesEnabled" value="true" />
+      </scope>
+      <option name="myValues">
+        <value>
+          <list size="0" />
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownBooleanAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Svg" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Svg" level="WARNING" enabled="false">
+        <option name="myValues">
+          <value>
+            <list size="6">
+              <item index="0" class="java.lang.String" itemvalue="nobr" />
+              <item index="1" class="java.lang.String" itemvalue="noembed" />
+              <item index="2" class="java.lang.String" itemvalue="comment" />
+              <item index="3" class="java.lang.String" itemvalue="noscript" />
+              <item index="4" class="java.lang.String" itemvalue="embed" />
+              <item index="5" class="java.lang.String" itemvalue="script" />
+            </list>
+          </value>
+        </option>
+        <option name="myCustomValuesEnabled" value="true" />
+      </scope>
+      <option name="myValues">
+        <value>
+          <list size="6">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTarget" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Svg" level="WARNING" enabled="false" />
+    </inspection_tool>
     <inspection_tool class="JSUnusedGlobalSymbols" enabled="true" level="WARNING" enabled_by_default="true">
       <scope name="Stories" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="RequiredAttributes" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Svg" level="WARNING" enabled="false">
+        <option name="myAdditionalRequiredHtmlAttributes" value="" />
+      </scope>
+      <option name="myAdditionalRequiredHtmlAttributes" value="" />
+    </inspection_tool>
+    <inspection_tool class="XmlUnusedNamespaceDeclaration" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Svg" level="WARNING" enabled="false" />
     </inspection_tool>
   </profile>
 </component>

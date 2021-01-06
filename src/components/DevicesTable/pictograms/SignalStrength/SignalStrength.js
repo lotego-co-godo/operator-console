@@ -15,13 +15,13 @@ export function SignalStrength({ strength }) {
       <img
         alt='signal-strength'
         src={
-          strength === 100
+          strength === 10
             ? signalFull
-            : strength > 60
+            : strength > 6
             ? signal4Bars
-            : strength > 40
+            : strength > 4
             ? signal3Bars
-            : strength > 20
+            : strength > 2
             ? signal2Bars
             : strength > 0
             ? signal1Bar

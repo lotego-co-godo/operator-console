@@ -36,7 +36,7 @@ export function DevicesMap(props) {
 
 function getIcon(deviceType) {
   return new L.Icon({
-    iconUrl: deviceType === 'Mobile' ? phoneIcon : deviceType === 'Car' ? carIcon : homeIcon,
+    iconUrl: deviceType === 'Portable' ? phoneIcon : deviceType === 'Car' ? carIcon : homeIcon,
     iconSize: [38, 95],
   });
 }

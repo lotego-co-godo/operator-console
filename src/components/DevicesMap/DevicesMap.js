@@ -10,12 +10,10 @@ import phoneIcon from './icons/mobile-alt-solid.svg';
 
 export function DevicesMap(props) {
   const { radioStatuses } = props;
-  const firstDevice = radioStatuses[0];
-  const firstDevicePosition = [firstDevice.Position.Lat, firstDevice.Position.Lon];
 
   return (
     <div className='DevicesMap'>
-      <MapContainer center={firstDevicePosition} zoom={2} scrollWheelZoom={false}>
+      <MapContainer center={[50.038, 19.955]} zoom={13} scrollWheelZoom={false}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
@@ -37,7 +35,7 @@ export function DevicesMap(props) {
 function getIcon(deviceType) {
   return new L.Icon({
     iconUrl: deviceType === 'Portable' ? phoneIcon : deviceType === 'Car' ? carIcon : homeIcon,
-    iconSize: [38, 95],
+    iconSize: [35, 40],
   });
 }
 

@@ -24,7 +24,7 @@ Default.args = {
       Name: 'KR 2',
       Type: 'BaseStation',
       SerialNumber: '6080-0414-7591-00001',
-      Strength: 99,
+      Strength: 5,
       BatteryLevel: 50,
       WorkingMode: 'Voice',
       Position: { Lat: '25.133', Lon: '50.530' },

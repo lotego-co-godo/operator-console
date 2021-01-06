@@ -11,19 +11,19 @@ const defaultPageSize = 5;
 
 export function DevicesTable({ radioStatuses }) {
   const columns = [
-    { field: 'Id', sortable: false, width: 50 },
-    { field: 'Name', sortable: false, width: 85 },
+    { field: 'Id', width: 70 },
+    { field: 'Name', width: 100 },
 
     // eslint-disable-next-line react/prop-types,react/display-name
-    { field: 'Type', sortable: false, width: 70, renderCell: ({ value }) => <DeviceType type={value} /> },
+    { field: 'Type', width: 90, renderCell: ({ value }) => <DeviceType type={value} /> },
     { field: 'SerialNumber', sortable: false, width: 200 },
 
     // eslint-disable-next-line react/prop-types,react/display-name
-    { field: 'Strength', sortable: false, width: 90, renderCell: ({ value }) => <SignalStrength strength={value} /> },
+    { field: 'Strength', width: 115, renderCell: ({ value }) => <SignalStrength strength={value} /> },
 
     // eslint-disable-next-line react/prop-types,react/display-name
-    { field: 'BatteryLevel', sortable: false, width: 120, renderCell: ({ value }) => <BatteryLevel level={value} /> },
-    { field: 'WorkingMode', sortable: false, width: 125 },
+    { field: 'BatteryLevel', width: 140, renderCell: ({ value }) => <BatteryLevel level={value} /> },
+    { field: 'WorkingMode', width: 145 },
   ];
 
   const rows = radioStatuses.map((radioStatus) => ({ id: radioStatus.Id, Position: undefined, ...radioStatus }));

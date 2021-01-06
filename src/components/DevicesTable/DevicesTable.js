@@ -14,14 +14,14 @@ export function DevicesTable({ radioStatuses }) {
     { field: 'Id', sortable: false, width: 50 },
     { field: 'Name', sortable: false, width: 85 },
 
-    // eslint-disable-next-line
+    // eslint-disable-next-line react/prop-types,react/display-name
     { field: 'Type', sortable: false, width: 70, renderCell: ({ value }) => <DeviceType type={value} /> },
     { field: 'SerialNumber', sortable: false, width: 200 },
 
-    // eslint-disable-next-line
+    // eslint-disable-next-line react/prop-types,react/display-name
     { field: 'Strength', sortable: false, width: 90, renderCell: ({ value }) => <SignalStrength strength={value} /> },
 
-    // eslint-disable-next-line
+    // eslint-disable-next-line react/prop-types,react/display-name
     { field: 'BatteryLevel', sortable: false, width: 120, renderCell: ({ value }) => <BatteryLevel level={value} /> },
     { field: 'WorkingMode', sortable: false, width: 125 },
   ];

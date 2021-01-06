@@ -3,6 +3,10 @@ import './DevicesMap.css';
 import PropTypes from 'prop-types';
 import { RadioStatus } from '../../radio-statuses/types';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import L from 'leaflet';
+import carIcon from './icons/car-solid.svg';
+import homeIcon from './icons/home-solid.svg';
+import phoneIcon from './icons/mobile-alt-solid.svg';
 
 export function DevicesMap(props) {
   const { radioStatuses } = props;
@@ -17,7 +21,7 @@ export function DevicesMap(props) {
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
         />
         {radioStatuses.map((device, i) => (
-          <Marker position={[device.Position.Lat, device.Position.Lon]} key={i}>
+          <Marker position={[device.Position.Lat, device.Position.Lon]} key={i} icon={getIcon(device.Type)}>
             <Popup>
               Id: {device.Id} <br />
               Strength: {device.Strength} <br />
@@ -28,6 +32,13 @@ export function DevicesMap(props) {
       </MapContainer>
     </div>
   );
+}
+
+function getIcon(deviceType) {
+  return new L.Icon({
+    iconUrl: deviceType === 'Mobile' ? phoneIcon : deviceType === 'Car' ? carIcon : homeIcon,
+    iconSize: [38, 95],
+  });
 }
 
 DevicesMap.propTypes = {

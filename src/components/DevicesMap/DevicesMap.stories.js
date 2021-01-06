@@ -12,7 +12,7 @@ Default.args = {
     {
       Id: 1,
       Name: 'KR 1',
-      Type: 'BaseStation',
+      Type: 'Car',
       SerialNumber: '6080-0414-7591-00001',
       Strength: 10,
       BatteryLevel: 100,

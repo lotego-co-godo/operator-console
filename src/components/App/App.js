@@ -1,20 +1,14 @@
 import React from 'react';
-import logo from '../../logo.svg';
 import './App.css';
+import { DevicesTable } from '../DevicesTable';
+import { useObservable } from '../../hooks';
+import { radioStatusesObservable } from '../../radio-statuses';
 
 function App() {
+  const radioStatuses = useObservable(radioStatusesObservable);
+
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a className='App-link' href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className='App'>{radioStatuses ? <DevicesTable radioStatuses={radioStatuses} /> : <div>Loading...</div>}</div>
   );
 }
 

@@ -1,0 +1,8 @@
+.DevicesTable {
+  height: 500px;
+}
+
+.DevicesTable .pictogram {
+  display: flex;
+  vertical-align: center;
+}

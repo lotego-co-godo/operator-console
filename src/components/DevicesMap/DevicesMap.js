@@ -2,7 +2,7 @@ import React from 'react';
 import './DevicesMap.css';
 import PropTypes from 'prop-types';
 import { RadioStatus } from '../../radio-statuses/types';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import L from 'leaflet';
 import carDarkGreenIcon from './icons/car-solid-dark-green.svg';
 import carDarkOrangeIcon from './icons/car-solid-dark-orange.svg';
@@ -38,13 +38,7 @@ export function DevicesMap(props) {
             position={[device.Position.Lat, device.Position.Lon]}
             key={i}
             icon={getIcon(device.Type, deviceHealth(device))}
-          >
-            <Popup>
-              Id: {device.Id} <br />
-              Strength: {device.Strength} <br />
-              BatteryLevel: {device.BatteryLevel}
-            </Popup>
-          </Marker>
+          />
         ))}
       </MapContainer>
     </div>
@@ -110,4 +104,6 @@ function getIcon(deviceType, deviceHealth) {
 
 DevicesMap.propTypes = {
   radioStatuses: PropTypes.arrayOf(RadioStatus).isRequired,
+  selectedDeviceId: PropTypes.string,
+  onDeviceSelected: PropTypes.func.isRequired,
 };

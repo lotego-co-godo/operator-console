@@ -3,9 +3,9 @@ import './DevicesTable.css';
 import PropTypes from 'prop-types';
 import { RadioStatus } from '../../radio-statuses/types';
 import { DataGrid } from '@material-ui/data-grid';
-import { DeviceType } from './pictograms/DeviceType';
-import { SignalStrength } from './pictograms/SignalStrength';
-import { BatteryLevel } from './pictograms/BatteryLevel';
+import { DeviceType } from '../pictograms/DeviceType';
+import { SignalStrength } from '../pictograms/SignalStrength';
+import { BatteryLevel } from '../pictograms/BatteryLevel';
 
 const defaultPageSize = 5;
 
@@ -37,8 +37,10 @@ export function DevicesTable({ radioStatuses, selectedDeviceId, onDeviceSelected
         rows={rows}
         pageSize={defaultPageSize}
         disableColumnMenu
-        selectionModel={selectedDeviceId ? [+selectedDeviceId] : []}
-        onSelectionModelChange={(newSelection) => onDeviceSelected(newSelection.selectionModel[0])}
+        selectionModel={selectedDeviceId ? [selectedDeviceId] : []}
+        onSelectionModelChange={(newSelection) => {
+          onDeviceSelected(+newSelection.selectionModel[0]);
+        }}
       />
     </div>
   );
@@ -46,6 +48,6 @@ export function DevicesTable({ radioStatuses, selectedDeviceId, onDeviceSelected
 
 DevicesTable.propTypes = {
   radioStatuses: PropTypes.arrayOf(RadioStatus).isRequired,
-  selectedDeviceId: PropTypes.string,
+  selectedDeviceId: PropTypes.number,
   onDeviceSelected: PropTypes.func.isRequired,
 };

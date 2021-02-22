@@ -1,0 +1,43 @@
+.DeviceMarker.health1 > .DeviceType > svg {
+  color: red;
+}
+
+.DeviceMarker.health2 > .DeviceType > svg {
+  color: darkorange;
+}
+
+.DeviceMarker.health3 > .DeviceType > svg {
+  color: orange;
+}
+
+.DeviceMarker.health4 > .DeviceType > svg {
+  color: yellow;
+}
+
+.DeviceMarker.health5 > .DeviceType > svg {
+  color: lightgreen;
+}
+
+.DeviceMarker.health6 > .DeviceType > svg {
+  color: darkgreen;
+}
+
+.DeviceMarker > .DeviceType > svg {
+  font-size: 35px;
+  transition: font-size 200ms, color 1s;
+}
+
+.DeviceMarker:hover > .DeviceType > svg {
+  font-size: 45px;
+}
+
+.DeviceMarker:active > .DeviceType > svg {
+  font-size: 35px;
+  transition: font-size 50ms, color 1s;
+}
+
+.DeviceMarker.selected > .DeviceType > svg {
+  font-size: 45px;
+  filter: drop-shadow(5px 5px 10px white) drop-shadow(-5px -5px 10px white) drop-shadow(5px -5px 10px white)
+    drop-shadow(-5px 5px 10px white);
+}

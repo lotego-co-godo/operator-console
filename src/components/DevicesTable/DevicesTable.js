@@ -3,13 +3,13 @@ import './DevicesTable.css';
 import PropTypes from 'prop-types';
 import { RadioStatus } from '../../radio-statuses/types';
 import { DataGrid } from '@material-ui/data-grid';
-import { DeviceType } from './pictograms/DeviceType';
-import { SignalStrength } from './pictograms/SignalStrength';
-import { BatteryLevel } from './pictograms/BatteryLevel';
+import { DeviceType } from '../pictograms/DeviceType';
+import { SignalStrength } from '../pictograms/SignalStrength';
+import { BatteryLevel } from '../pictograms/BatteryLevel';
 
 const defaultPageSize = 5;
 
-export function DevicesTable({ radioStatuses }) {
+export function DevicesTable({ radioStatuses, selectedDeviceId, onDeviceSelected }) {
   const columns = [
     { field: 'Id', width: 70 },
     { field: 'Name', width: 100 },
@@ -32,11 +32,22 @@ export function DevicesTable({ radioStatuses }) {
   // noinspection RequiredAttributes
   return (
     <div className='DevicesTable'>
-      <DataGrid columns={columns} rows={rows} pageSize={defaultPageSize} disableSelectionOnClick disableColumnMenu />
+      <DataGrid
+        columns={columns}
+        rows={rows}
+        pageSize={defaultPageSize}
+        disableColumnMenu
+        selectionModel={selectedDeviceId ? [selectedDeviceId] : []}
+        onSelectionModelChange={(newSelection) => {
+          onDeviceSelected(+newSelection.selectionModel[0]);
+        }}
+      />
     </div>
   );
 }
 
 DevicesTable.propTypes = {
   radioStatuses: PropTypes.arrayOf(RadioStatus).isRequired,
+  selectedDeviceId: PropTypes.number,
+  onDeviceSelected: PropTypes.func.isRequired,
 };

@@ -1,0 +1,1 @@
+export { DeviceMarker } from './DeviceMarker';

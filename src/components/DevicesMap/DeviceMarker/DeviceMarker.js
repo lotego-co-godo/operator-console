@@ -3,7 +3,7 @@ import './DeviceMarker.css';
 import PropTypes from 'prop-types';
 import { DeviceType } from '../../pictograms/DeviceType';
 
-export function DeviceMarker({ type, health, onClick, selected }) {
+export function DeviceMarker({ type, health, onClick, selected, distance }) {
   let healthLevel;
 
   if (health >= 90) {
@@ -23,6 +23,7 @@ export function DeviceMarker({ type, health, onClick, selected }) {
   return (
     <div className={`DeviceMarker health${healthLevel} ${selected ? 'selected' : ''}`} onClick={onClick}>
       <DeviceType type={type} />
+      {distance ? <div className={`distance`}>{distance?.toFixed()} m</div> : undefined}
     </div>
   );
 }
@@ -32,4 +33,5 @@ DeviceMarker.propTypes = {
   health: PropTypes.number.isRequired,
   onClick: PropTypes.func,
   selected: PropTypes.bool.isRequired,
+  distance: PropTypes.number,
 };

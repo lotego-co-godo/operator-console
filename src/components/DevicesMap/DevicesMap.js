@@ -20,12 +20,19 @@ export function DevicesMap({ radioStatuses, onDeviceSelected, selectedDeviceId }
         : getIcon(device.Type, getDeviceHealth(device), device.Id, onDeviceSelected);
       newIcons[device.Id] = icon;
       const element = icon.options.html;
+      const selectedDevice = radioStatuses.find((radio) => radio.Id === selectedDeviceId);
+      const distanceToSelectedDevice = selectedDevice
+        ? L.latLng(device.Position.Lat, device.Position.Lon).distanceTo(
+            L.latLng(selectedDevice.Position.Lat, selectedDevice.Position.Lon)
+          )
+        : undefined;
       ReactDom.render(
         <DeviceMarker
           type={device.Type}
           health={getDeviceHealth(device)}
           onClick={() => onDeviceSelected(device.Id)}
-          selected={selectedDeviceId === device.Id}
+          selected={selectedDevice === device}
+          distance={selectedDevice !== device ? distanceToSelectedDevice : undefined}
         />,
         element
       );

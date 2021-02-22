@@ -38,6 +38,10 @@
 
 .DeviceMarker.selected > .DeviceType > svg {
   font-size: 45px;
-  filter: drop-shadow(5px 5px 10px white) drop-shadow(-5px -5px 10px white) drop-shadow(5px -5px 10px white)
-    drop-shadow(-5px 5px 10px white);
+  filter: drop-shadow(2px 2px 10px white) drop-shadow(-2px -2px 10px white) drop-shadow(2px -2px 10px white)
+    drop-shadow(-2px 2px 10px white);
+}
+
+.DeviceMarker > .distance {
+  white-space: nowrap;
 }

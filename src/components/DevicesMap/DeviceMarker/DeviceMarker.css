@@ -45,6 +45,10 @@
     drop-shadow(-1px 1px 15px white);
 }
 
+.DeviceMarker.selected {
+  cursor: grab;
+}
+
 .DeviceMarker > .distance {
   white-space: nowrap;
 }

@@ -37,6 +37,7 @@ export function DevicesTable({ radioStatuses, selectedDeviceId, onDeviceSelected
         rows={rows}
         pageSize={defaultPageSize}
         disableColumnMenu
+        hideFooterSelectedRowCount
         selectionModel={selectedDeviceId ? [selectedDeviceId] : []}
         onSelectionModelChange={(newSelection) => {
           onDeviceSelected(+newSelection.selectionModel[0]);

@@ -42,6 +42,7 @@ export function DevicesTable({ radioStatuses, selectedDeviceId, onDeviceSelected
         onSelectionModelChange={(newSelection) => {
           onDeviceSelected(+newSelection.selectionModel[0]);
         }}
+        autoPageSize
       />
     </div>
   );

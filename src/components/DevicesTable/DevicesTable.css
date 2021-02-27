@@ -6,3 +6,8 @@
   display: flex;
   vertical-align: center;
 }
+
+.DevicesTable .MuiDataGrid-root .MuiDataGrid-row.Mui-selected,
+.DevicesTable .MuiDataGrid-root .MuiDataGrid-row.Mui-selected:hover {
+  background-color: rgba(48, 158, 217, 0.8);
+}

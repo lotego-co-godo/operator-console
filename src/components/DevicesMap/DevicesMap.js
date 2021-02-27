@@ -59,7 +59,7 @@ function getIcon() {
   const iconElement = document.createElement('div');
   return L.divIcon({
     html: iconElement,
-    iconSize: [40, 40],
+    iconSize: [5, 5],
   });
 }
 

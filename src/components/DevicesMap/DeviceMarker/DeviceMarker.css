@@ -6,27 +6,27 @@
 }
 
 .DeviceMarker.health1 > .DeviceType > svg {
-  color: red;
+  color: #e71313;
 }
 
 .DeviceMarker.health2 > .DeviceType > svg {
-  color: darkorange;
+  color: #ff9104;
 }
 
 .DeviceMarker.health3 > .DeviceType > svg {
-  color: orange;
+  color: #ffa925;
 }
 
 .DeviceMarker.health4 > .DeviceType > svg {
-  color: yellow;
+  color: #d9d909;
 }
 
 .DeviceMarker.health5 > .DeviceType > svg {
-  color: lightgreen;
+  color: #66cd0c;
 }
 
 .DeviceMarker.health6 > .DeviceType > svg {
-  color: darkgreen;
+  color: #08bc08;
 }
 
 .DeviceMarker > .DeviceType > svg {

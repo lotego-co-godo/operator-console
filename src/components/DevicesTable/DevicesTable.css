@@ -11,3 +11,8 @@
 .DevicesTable .MuiDataGrid-root .MuiDataGrid-row.Mui-selected:hover {
   background-color: rgba(48, 158, 217, 0.8);
 }
+
+.DevicesTable .MuiDataGrid-root .MuiDataGrid-cell:focus,
+.DevicesTable .MuiDataGrid-root .MuiDataGrid-colCell:focus {
+  outline: none;
+}

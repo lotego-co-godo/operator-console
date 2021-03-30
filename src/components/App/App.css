@@ -1,9 +1,15 @@
 .App {
-  text-align: center;
-  display: flex;
-  height: 100%;
+    text-align: center;
+    display: flex;
+    height: 100%;
 }
 
 .App > * {
-  flex: 1;
+    flex: 1;
+}
+
+@media (max-aspect-ratio: 4/2) {
+    .App {
+        flex-direction: column;
+    }
 }

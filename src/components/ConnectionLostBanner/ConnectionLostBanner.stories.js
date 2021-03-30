@@ -1,9 +1,9 @@
 import React from 'react';
-import {ConnectionLostBanner} from "./ConnectionLostBanner";
+import { ConnectionLostBanner } from './ConnectionLostBanner';
 
 export default {
-    title: 'ConnectionLostBanner',
-    component: ConnectionLostBanner,
+  title: 'ConnectionLostBanner',
+  component: ConnectionLostBanner,
 };
 
 export const Default = (args) => <ConnectionLostBanner {...args} />;

@@ -11,7 +11,8 @@
   transition: background 200ms, border-color 150ms;
 }
 
-.DeviceMarker:hover, .DeviceMarker.selected {
+.DeviceMarker:hover,
+.DeviceMarker.selected {
   border-color: transparent;
   background: none;
 }
@@ -48,7 +49,6 @@
   padding-top: 1px;
   stroke-dasharray: 2, 2;
 }
-
 
 .DeviceMarker:not(.distanceShown) > .DeviceType > svg {
   font-size: 30px;

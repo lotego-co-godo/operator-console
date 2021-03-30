@@ -1,1 +1,1 @@
-export {ConnectionLostBanner} from './ConnectionLostBanner'
+export { ConnectionLostBanner } from './ConnectionLostBanner';

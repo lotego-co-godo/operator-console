@@ -1,22 +1,22 @@
 .App {
-    text-align: center;
-    display: flex;
-    height: 100%;
+  text-align: center;
+  display: flex;
+  height: 100%;
 }
 
 .App > * {
-    flex: 1;
+  flex: 1;
 }
 
 @media (max-aspect-ratio: 4/2) {
-    .App {
-        flex-direction: column;
-    }
+  .App {
+    flex-direction: column;
+  }
 }
 
 .App > .ConnectionLostBanner {
-    position: absolute;
-    z-index: 1000;
-    top: 15px;
-    left: 50px
+  position: absolute;
+  z-index: 1000;
+  top: 15px;
+  left: 50px;
 }

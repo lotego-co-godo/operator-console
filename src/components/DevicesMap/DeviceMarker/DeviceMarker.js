@@ -21,7 +21,10 @@ export function DeviceMarker({ type, health, onClick, selected, distance }) {
   }
 
   return (
-    <div className={`DeviceMarker health${healthLevel} ${selected ? 'selected' : ''} ${distance? 'distanceShown' : ''}`} onClick={onClick}>
+    <div
+      className={`DeviceMarker health${healthLevel} ${selected ? 'selected' : ''} ${distance ? 'distanceShown' : ''}`}
+      onClick={onClick}
+    >
       <DeviceType type={type} />
       {distance ? <div className={`distance`}>{distance?.toFixed()} m</div> : undefined}
     </div>

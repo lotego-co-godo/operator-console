@@ -14,6 +14,7 @@ export function DevicesTable({ radioStatuses, selectedDeviceId, onDeviceSelected
     { field: 'Id', width: 70 },
     { field: 'Name', width: 100 },
 
+    // eslint thinks this arrow function is a React component, but it's not, so we've to disable it
     // eslint-disable-next-line react/prop-types,react/display-name
     { field: 'Type', width: 90, renderCell: ({ value }) => <DeviceType type={value} /> },
     { field: 'SerialNumber', sortable: false, width: 200 },

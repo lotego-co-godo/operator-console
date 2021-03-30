@@ -123,7 +123,9 @@ describe('radioStatusesObservable', () => {
     );
 
     let mostRecentStatuses;
-    const subscription = radioStatusesObservable.subscribe((statusesUpdateResult) => (mostRecentStatuses = statusesUpdateResult.radioStatuses));
+    const subscription = radioStatusesObservable.subscribe(
+      (statusesUpdateResult) => (mostRecentStatuses = statusesUpdateResult.radioStatuses)
+    );
 
     for (let i = 0; i < 3; i++) {
       fetchRadioStatuses.mockReturnValue(

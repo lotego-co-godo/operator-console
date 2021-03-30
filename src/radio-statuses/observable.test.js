@@ -86,8 +86,8 @@ describe('radioStatusesObservable', () => {
 
     expect.assertions(1);
 
-    const subscription = radioStatusesObservable.subscribe((statuses) =>
-      expect(statuses).toStrictEqual([
+    const subscription = radioStatusesObservable.subscribe((statusesUpdateResult) =>
+      expect(statusesUpdateResult.radioStatuses).toStrictEqual([
         {
           Id: 1,
           Name: 'KR 1',
@@ -123,7 +123,9 @@ describe('radioStatusesObservable', () => {
     );
 
     let mostRecentStatuses;
-    const subscription = radioStatusesObservable.subscribe((statuses) => (mostRecentStatuses = statuses));
+    const subscription = radioStatusesObservable.subscribe(
+      (statusesUpdateResult) => (mostRecentStatuses = statusesUpdateResult.radioStatuses)
+    );
 
     for (let i = 0; i < 3; i++) {
       fetchRadioStatuses.mockReturnValue(

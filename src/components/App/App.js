@@ -4,29 +4,33 @@ import { DevicesTable } from '../DevicesTable';
 import { useObservable } from '../../hooks';
 import { radioStatusesObservable } from '../../radio-statuses';
 import { DevicesMap } from '../DevicesMap';
+import { ConnectionLostBanner } from '../ConnectionLostBanner';
 
 function App() {
-  const radioStatuses = useObservable(radioStatusesObservable);
+  const radioStatusesUpdateResult = useObservable(radioStatusesObservable);
 
   const [selectedDeviceId, setSelectedDeviceId] = useState(null);
 
   return (
     <div className='App'>
-      {radioStatuses ? (
+      {radioStatusesUpdateResult?.radioStatuses ? (
         <>
           <DevicesMap
-            radioStatuses={radioStatuses}
+            radioStatuses={radioStatusesUpdateResult.radioStatuses}
             selectedDeviceId={selectedDeviceId}
             onDeviceSelected={setSelectedDeviceId}
           />
           <DevicesTable
-            radioStatuses={radioStatuses}
+            radioStatuses={radioStatusesUpdateResult.radioStatuses}
             selectedDeviceId={selectedDeviceId}
             onDeviceSelected={setSelectedDeviceId}
           />
+          {!radioStatusesUpdateResult.lastFetchSuccessful ? <ConnectionLostBanner /> : undefined}
         </>
-      ) : (
+      ) : !radioStatusesUpdateResult ? (
         <div>Loading...</div>
+      ) : (
+        <div>Please ensure API server is running</div>
       )}
     </div>
   );

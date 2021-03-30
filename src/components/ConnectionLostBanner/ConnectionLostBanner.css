@@ -1,0 +1,7 @@
+.ConnectionLostBanner {
+  color: #d42828;
+  background-color: rgba(34, 34, 34, 0.75);
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 15px;
+}

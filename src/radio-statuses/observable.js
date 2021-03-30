@@ -7,9 +7,16 @@ import { refreshRateInSeconds } from './refresh-rate';
 const interval = refreshRateInSeconds * 1000;
 
 export const radioStatusesObservable = new Observable((subscriber) => {
+  let last = null;
+
   const timerSubscription = timer(0, interval).subscribe(() => {
     const radioStatusesPromise = fetchRadioStatuses();
-    radioStatusesPromise.then((radioStatuses) => subscriber.next(radioStatuses)).catch(() => 'ignore');
+    radioStatusesPromise
+      .then((radioStatuses) => {
+        subscriber.next({ radioStatuses, lastFetchSuccessful: true });
+        last = radioStatuses;
+      })
+      .catch(() => subscriber.next({ radioStatuses: last, lastFetchSuccessful: false }));
   });
 
   return function unsubscribe() {

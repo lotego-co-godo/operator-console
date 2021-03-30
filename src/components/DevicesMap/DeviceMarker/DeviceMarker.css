@@ -1,8 +1,19 @@
 .DeviceMarker {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 50px;
   width: 50px;
+  background: white;
+  border-radius: 100%;
+  border: 1px solid black;
+  transition: background 200ms, border-color 150ms;
+}
+
+.DeviceMarker:hover, .DeviceMarker.selected {
+  border-color: transparent;
+  background: none;
 }
 
 .DeviceMarker.health1 > .DeviceType > svg {
@@ -30,24 +41,31 @@
 }
 
 .DeviceMarker > .DeviceType > svg {
-  font-size: 35px;
-  transition: font-size 200ms, color 1s;
+  font-size: 25px;
+  transition: font-size 300ms, color 1s;
   stroke: #646464;
   stroke-width: 10px;
+  padding-top: 1px;
   stroke-dasharray: 2, 2;
 }
 
+
+.DeviceMarker:not(.distanceShown) > .DeviceType > svg {
+  font-size: 30px;
+}
+
 .DeviceMarker:hover > .DeviceType > svg {
-  font-size: 45px;
+  font-size: 35px;
+  transition: font-size 250ms, color 1s;
 }
 
 .DeviceMarker:active > .DeviceType > svg {
-  font-size: 35px;
+  font-size: 30px;
   transition: font-size 50ms, color 1s;
 }
 
 .DeviceMarker.selected > .DeviceType > svg {
-  font-size: 45px;
+  font-size: 35px;
   filter: drop-shadow(1px 1px 15px white) drop-shadow(-1px -1px 15px white) drop-shadow(1px -1px 15px white)
     drop-shadow(-1px 1px 15px white);
 }
@@ -58,6 +76,9 @@
 
 .DeviceMarker > .distance {
   white-space: nowrap;
-  text-shadow: -1px 1px 2px white, 1px 1px 2px white, 1px -1px 0 white, -1px -1px 0 white;
-  justify-self: flex-end;
+  font-size: 9px;
+}
+
+.DeviceMarker:hover > .distance {
+  display: none;
 }
